@@ -44,8 +44,8 @@ node slave2.puppet {
   }
 }
 
-node master.puppet {
-  class nginx 
+node 'master.puppet' {
+  class {'nginx':} 
   
   nginx::resource::server { '192.168.50.5':
   listen_port => 81,
