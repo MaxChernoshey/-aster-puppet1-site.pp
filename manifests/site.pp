@@ -51,6 +51,10 @@ node master.puppet {
     ensure => stopped,
     enable => false,
   }
+
+  class { selinux:
+    mode => 'permissive',
+  }
   
   nginx::resource::server { '192.168.50.5:81':
   listen_port => 81,
