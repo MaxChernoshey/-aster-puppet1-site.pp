@@ -52,7 +52,7 @@ node master.puppet {
     enable => false,
   }
 
-  class { selinux:
+  class {'selinux':
     mode => 'permissive',
   }
   
