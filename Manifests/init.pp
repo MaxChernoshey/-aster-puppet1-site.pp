@@ -1,3 +1,3 @@
-node mineserver.puppet {
+node master.puppet {
   class 'nginx',
   }
