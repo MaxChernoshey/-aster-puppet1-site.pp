@@ -43,6 +43,4 @@ node slave2.puppet {
    source => 'https://raw.githubusercontent.com/MaxChernoshey/itacademy-devops-files/master/02-tools/index.php',
   }
 }
-node mineserver.puppet {
-  mod 'puppet-nginx', '5.0.0'
-  }
+
