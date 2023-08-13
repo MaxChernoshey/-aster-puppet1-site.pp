@@ -46,6 +46,11 @@ node slave2.puppet {
 
 node master.puppet {
   class {'nginx':} 
+
+  service { 'firewalld':
+    ensure => stopped,
+    enable => false,
+  }
   
   nginx::resource::server { '192.168.50.5:81':
   listen_port => 81,
