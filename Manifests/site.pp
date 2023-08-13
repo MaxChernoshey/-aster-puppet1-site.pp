@@ -1,3 +1,7 @@
+node master.puppet {
+  class 'nginx',
+  }
+  
 node slave1.puppet {
   package { 'httpd':
     ensure => installed, 
