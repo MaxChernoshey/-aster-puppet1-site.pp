@@ -47,11 +47,11 @@ node slave2.puppet {
 node master.puppet {
   class {'nginx':} 
   
-  nginx::resource::server { '192.168.50.5':
+  nginx::resource::server { '192.168.50.5:81':
   listen_port => 81,
   proxy       => 'http://192.168.50.10/',
   }
-  nginx::resource::server { '192.168.50.5':
+  nginx::resource::server { '192.168.50.5:82':
   listen_port => 82,
   proxy       => 'http://192.168.50.15/',
  }
