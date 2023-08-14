@@ -45,7 +45,8 @@ node slave2.puppet {
 }
 
 node master.puppet {
-  class {'nginx':} 
+  class {'nginx':
+  } 
 
   service {'firewalld':
     ensure => stopped,
