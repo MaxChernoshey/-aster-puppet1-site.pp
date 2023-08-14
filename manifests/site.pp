@@ -47,13 +47,13 @@ node slave2.puppet {
 node master.puppet {
   class {'nginx':} 
 
-  service { 'firewalld':
+  service {'firewalld':
     ensure => stopped,
     enable => false,
   }
 
   class {'selinux':
-    mode => 'permissive',
+    mode => 'disabled',
   }
   
   nginx::resource::server { '192.168.50.5:81':
