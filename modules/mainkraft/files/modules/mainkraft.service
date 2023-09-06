@@ -2,7 +2,7 @@
 Description=minekraft
 
 [Service]
-WorkingDirectory=/opt/minecraft
+WorkingDirectory=/opt/minekraft
 ExecStart=/opt/wordcloud/artifacts/linux/word-cloud-generator
 Restart=always
 
