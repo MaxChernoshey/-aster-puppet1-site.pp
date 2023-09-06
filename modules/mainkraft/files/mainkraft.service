@@ -3,7 +3,7 @@ Description=minekraft
 
 [Service]
 WorkingDirectory=/opt/minekraft
-ExecStart=/opt/wordcloud/artifacts/linux/word-cloud-generator
+ExecStart=/opt/minekraft/
 Restart=always
 
 [Install]
