@@ -1,5 +1,5 @@
 class mainkraft {
-  package { ['git']:
+  package { 'git':
     ensure => installed,
   }
   file { '/opt/minekraft':
