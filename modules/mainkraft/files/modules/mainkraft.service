@@ -1,10 +1,9 @@
 [Unit]
-Description=Word Cloud Generator
+Description=minekraft
 
 [Service]
-WorkingDirectory=/opt/wordcloud
-ExecStart=/opt/wordcloud/artifacts/linu
-x/word-cloud-generator
+WorkingDirectory=/opt/minecraft
+ExecStart=/opt/wordcloud/artifacts/linux/word-cloud-generator
 Restart=always
 
 [Install]
