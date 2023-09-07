@@ -6,6 +6,13 @@ class mainkraft {
   file { '/opt/minekraft':
     ensure => directory,
   }
+  
+  
+  
+  
+  
+  
+  
   file { '/etc/systemd/system/minekraft.service':
     ensure => file,
     source => 'puppet:///modules/minekraft/minekraft.service',
