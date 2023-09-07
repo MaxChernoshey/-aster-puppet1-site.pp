@@ -1,7 +1,7 @@
 class mainkraft {
-  package { 'git':
-    ensure => installed,
-  }
+  #package { 'git':
+   # ensure => installed,
+  #}
   file { '/opt/minekraft':
     ensure => directory,
   }
