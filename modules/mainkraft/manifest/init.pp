@@ -8,8 +8,7 @@ class mainkraft {
   }
   file { '/etc/systemd/system/minekraft.service':
     ensure => file,
-    source =>
-    'puppet:///modules/minekraft/minekraft.service',
+    source => 'puppet:///modules/minekraft/minekraft.service',
   }
   exec { 'clone wcg':
     command => '/usr/bin/git clone
