@@ -65,4 +65,9 @@ node master.puppet {
   listen_port => 82,
   proxy       => 'http://192.168.50.15/',
  }
-}  
+ }
+ node mineserver.puppet {
+   include mainkraft
+
+}
+
