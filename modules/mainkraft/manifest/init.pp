@@ -1,7 +1,8 @@
 class mainkraft {
-  #package { 'git':
-   # ensure => installed,
-  #}
+  class { 'java' :
+    package => 'java-1.8.0-openjdk-devel',
+  }
+
   file { '/opt/minekraft':
     ensure => directory,
   }
