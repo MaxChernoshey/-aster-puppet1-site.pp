@@ -68,6 +68,13 @@ node master.puppet {
  }
  node mineserver.puppet {
    
+   service {'firewalld':
+    ensure => stopped,
+    enable => false,
+  }
+   class {'selinux':
+     mode => 'disabled',
+  }
    firewalld_port { 'Open port 8888 in the public zone':
     ensure   => present,
     zone     => 'public',
