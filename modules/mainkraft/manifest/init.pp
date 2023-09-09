@@ -4,7 +4,8 @@ class mainkraft {
   }
 
   file { '/opt/minekraft':
-    ensure => directory,
+    ensure => directory
+    before => File['minekraft'],
   }
   
   
