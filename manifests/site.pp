@@ -64,25 +64,25 @@ node master.puppet {
   nginx::resource::server { '192.168.50.5:82':
   listen_port => 82,
   proxy       => 'http://192.168.50.15/',
- }
- }
- node mineserver.puppet {
+  }
+  }
+node mineserver.puppet {
    
-   service {'firewalld':
+  service {'firewalld':
     ensure => stopped,
     enable => false,
   }
-   class {'selinux':
-     mode => 'disabled',
+  class {'selinux':
+    mode => 'disabled',
   }
-   firewalld_port { 'Open port 8888 in the public zone':
+  firewalld_port { 'Open port 8888 in the public zone':
     ensure   => present,
     zone     => 'public',
     port     => 8888,
     protocol => 'tcp',
    }
    
-   include mainkraft
+  include mainkraft
 
 }
 
