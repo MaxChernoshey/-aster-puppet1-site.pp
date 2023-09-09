@@ -4,40 +4,24 @@ class mainkraft {
   }
 
   file { '/opt/minekraft':
-    ensure => directory
+    ensure => directory,
     before => File['minekraft'],
   }
   
-  
-  
-  
-  
-  
-  
-  file { '/etc/systemd/system/minekraft.service':
-    ensure => file,
+  file { 'minekraft':
+    path=> '/opt/minekraft/minekraft',
+    source => 'https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar',
+    mode => '755',
+    require => File['/opt/minekraft'],
+  }
+    
+  file { 'minekraft_service':
+    path=> '/etc/systemd/system/minekraft/minekraft.service',
     source => 'puppet:///modules/minekraft/minekraft.service',
+    notify => Service ['minekraft']
   }
-  exec { 'clone wcg':
-    command => '/usr/bin/git clone
-    https://github.com/Fenikks/word-cloud-generator.git.',
-    cwd => "/opt/wordcloud",
-    returns => [0, 128],
-    require => File['/opt/wordcloud'],
-  }
-  exec { 'make wcg':
-    cwd => "/opt/wordcloud",
-    command => 'make',
-    path => "/usr/bin:/usr/local/go/bin",
-    logoutput => true,
-    require => Exec['clone wcg'],
-    environment => ['GOPATH=/usr/local/go/bin',
-    'GOCACHE=/tmp/gocache'],
-  }
-  service { 'wordcloud':
+  
+  service { 'minekraft':
     ensure => running,
-  }
-  exec { 'Open wcg port 8888':
-    command => "/usr/bin/firewall-cmd --addport=8888/tcp",
   }
 }
