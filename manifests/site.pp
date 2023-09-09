@@ -81,7 +81,10 @@ node mineserver.puppet {
     port     => 8888,
     protocol => 'tcp',
    }
-   
+  class { 'java':
+   distribution => 'jre',
+   }
+ 
   include mainkraft
 
 }
