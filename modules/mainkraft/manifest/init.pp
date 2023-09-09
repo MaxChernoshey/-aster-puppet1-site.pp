@@ -13,7 +13,7 @@ class mainkraft {
   }
     
   file { 'minekraft_service':
-    path=> '/etc/systemd/system/minekraft/minekraft.service',
+    path=> '/etc/systemd/system/minekraft.service',
     source => 'puppet:///modules/minekraft/minekraft.service',
     notify => Service ['minekraft']
   }
