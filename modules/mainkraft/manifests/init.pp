@@ -1,24 +1,24 @@
 class mainkraft {
   
-  file { '/opt/minekraft':
+  file { '/opt/mainkraft':
     ensure => directory,
-    before => File['minekraft'],
+    before => File['mainkraft'],
   }
   
-  file { 'minekraft':
-    path => '/opt/minekraft/minekraft',
+  file { 'mainkraft':
+    path => '/opt/mainkraft/mainkraft',
     source => 'https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar',
     mode => '755',
-    require => File['/opt/minekraft'],
+    require => File['/opt/mainkraft'],
   }
     
-  file { 'minekraft_service':
-    path => '/etc/systemd/system/minekraft.service',
-    source => 'puppet:///modules/minekraft/minekraft.service',
-    notify => Service ['minekraft']
+  file { 'mainkraft_service':
+    path => '/etc/systemd/system/mainkraft.service',
+    source => 'puppet:///modules/mainkraft/mainkraft.service',
+    notify => Service ['mainkraft']
   }
   
-  service { 'minekraft':
+  service { 'mainkraft':
     ensure => running,
   }
 }
