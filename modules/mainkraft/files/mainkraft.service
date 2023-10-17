@@ -1,8 +1,8 @@
 [Unit]
-Description=minekraft
+Description=mainkraft
 
 [Service]
-WorkingDirectory=/opt/minekraft
+WorkingDirectory=/opt/mainkraft
 ExecStart=java -Xmx1024M -Xms1024M -jar minecraft_server.1.20.1.jar nogui
 Restart=always
 
