@@ -66,9 +66,9 @@ node master.puppet {
   proxy       => 'http://192.168.50.15/',
   }
   }
+
 node mineserver.puppet {
-   
-  service {'firewalld':
+    service {'firewalld':
     ensure => stopped,
     enable => false,
   }
