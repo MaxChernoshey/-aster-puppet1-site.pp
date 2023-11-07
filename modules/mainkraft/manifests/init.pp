@@ -1,9 +1,10 @@
 class mainkraft {
-  
+
   file { '/opt/mainkraft':
     ensure => directory,
     #before => File['mainkraft'],
   }
+
   
   file { 'mainkraft':
     path => '/opt/mainkraft/server.jar',
