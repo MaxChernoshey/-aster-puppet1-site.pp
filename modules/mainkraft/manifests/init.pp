@@ -4,7 +4,11 @@ class mainkraft {
     ensure => directory,
     #before => File['mainkraft'],
   }
-
+  
+  file { '/opt/mainkraft/eula.txt': 
+    ensure => file,
+    content => 'TRUE',
+  }
   
   file { 'mainkraft':
     path => '/opt/mainkraft/server.jar',
