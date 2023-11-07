@@ -7,7 +7,7 @@ class mainkraft {
   
   file { '/opt/mainkraft/eula.txt': 
     ensure => file,
-    content => 'TRUE',
+    content => 'eula=TRUE',
   }
   
   file { 'mainkraft':
