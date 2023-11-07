@@ -15,7 +15,7 @@ class mainkraft {
   file { 'mainkraft_service':
     path => '/etc/systemd/system/mainkraft.service',
     source => 'puppet:///modules/mainkraft/mainkraft.service',
-    notify => Service ['mainkraft']
+    notify => Service['mainkraft'],
   }
   
   service { 'mainkraft':
