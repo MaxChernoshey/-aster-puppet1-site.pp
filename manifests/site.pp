@@ -80,11 +80,11 @@ node mineserver.puppet {
     zone     => public,
     port     => 8888,
     protocol => 'tcp',
-   }
-  class { 'java':
-   distribution => 'jre',
-   }
- 
+  }
+  package { 'java-17-openjdk':
+    ensure => installed,
+  } 
+  
   include mainkraft
 
 }
